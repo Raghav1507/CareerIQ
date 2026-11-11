@@ -43,7 +43,7 @@ export default async function SettingsPage() {
   ]);
 
   const joined = user.created_at
-    ? new Date(user.created_at).toLocaleDateString(undefined, {
+    ? new Date(user.created_at).toLocaleDateString("en-IN", {
         year: "numeric",
         month: "long",
         day: "numeric",

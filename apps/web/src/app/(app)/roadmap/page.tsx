@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { requireUser } from "@/lib/supabase/auth";
 import { getRoleIndex } from "@/lib/server/match-data";
+import { formatDate } from "@/lib/utils";
 import {
   getRoadmapProgress,
   listRoadmaps,
@@ -68,7 +69,7 @@ export default async function RoadmapPage({ searchParams }: { searchParams: Sear
               <span className="flex items-center gap-2 text-xs text-muted-foreground">
                 <Badge variant="muted">{selected.horizon_weeks}-week horizon</Badge>
                 <Badge variant="info">{plan.length} active weeks</Badge>
-                created {new Date(selected.created_at).toLocaleDateString()}
+                created {formatDate(selected.created_at)}
               </span>
             </div>
           </CardHeader>
@@ -101,7 +102,7 @@ export default async function RoadmapPage({ searchParams }: { searchParams: Sear
               >
                 <span>{r.title}</span>
                 <span className="text-xs text-muted-foreground">
-                  {new Date(r.created_at).toLocaleDateString()}
+                  {formatDate(r.created_at)}
                 </span>
               </Link>
             ))}

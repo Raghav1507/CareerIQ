@@ -1,6 +1,6 @@
 # CareerIQ — System Architecture
 
-> AI Career Intelligence Platform · CSET400C Capstone · Bennett University
+> AI Career Intelligence Platform
 > Status: **Full M1 workflow built (Phases 1–7) and E2E-verified** — see `docs/development-plan.md`.
 
 ## 1. Overview

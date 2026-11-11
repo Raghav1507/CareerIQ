@@ -10,6 +10,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { apiFetch, ApiException } from "@/lib/api";
+import { formatDateTime } from "@/lib/utils";
 
 type ParsedSkill = { slug: string; name: string; category: string; confidence?: number; evidence?: string };
 
@@ -306,7 +307,7 @@ export function ResumeManager({ resumes }: { resumes: ResumeRecord[] }) {
                     <div className="min-w-0 flex-1">
                       <p className="truncate text-sm font-medium">{r.file_name}</p>
                       <p className="text-xs text-muted-foreground">
-                        {new Date(r.created_at).toLocaleString()} ·{" "}
+                        {formatDateTime(r.created_at)} ·{" "}
                         {r.page_count ? `${r.page_count} pages · ` : ""}
                         {formatBytes(Number(r.size_bytes))}
                       </p>

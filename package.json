@@ -2,7 +2,7 @@
   "name": "careeriq",
   "version": "0.1.0",
   "private": true,
-  "description": "CareerIQ - AI Career Intelligence Platform (CSET400C Capstone, Bennett University)",
+  "description": "CareerIQ - AI Career Intelligence Platform",
   "workspaces": [
     "apps/*"
   ],

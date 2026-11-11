@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { requireUser } from "@/lib/supabase/auth";
 import { queryOne } from "@/lib/db";
 import { listJobs } from "@/lib/server/jobs";
+import { formatDate } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Job Match Analyzer" };
@@ -69,7 +70,7 @@ export default async function JobAnalyzerPage() {
                       <Badge variant="outline">no skills found</Badge>
                     )}
                     <span className="text-xs text-muted-foreground">
-                      {new Date(job.created_at).toLocaleDateString()}
+                      {formatDate(job.created_at)}
                     </span>
                   </span>
                 </div>

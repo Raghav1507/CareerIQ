@@ -111,7 +111,7 @@ export default function LandingPage() {
           <div className="app-container grid items-center gap-12 py-16 lg:grid-cols-2 lg:py-24">
             <div>
               <Badge variant="info" className="mb-5">
-                CSET400C Capstone · Bennett University
+                Open source · Explainable AI
               </Badge>
               <h1 className="text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.4rem]">
                 Know exactly which career fits{" "}
@@ -370,7 +370,7 @@ export default function LandingPage() {
             </span>
             CareerIQ — AI Career Intelligence Platform
           </p>
-          <p>CSET400C Capstone · Bennett University</p>
+          <p>Made for students & career switchers</p>
         </div>
       </footer>
     </div>

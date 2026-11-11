@@ -91,7 +91,7 @@ always deterministic (M1 formula); the LLM (Gemini only) explains evidence.
   (`lib/server/audit.ts` → `audit_logs`), CI (`.github/workflows/ci.yml`:
   lint/typecheck/test/build + ruff/pytest), load test (`scripts/load.mjs`).
 - ⬜ Vercel (web) + Render/Fly (ai) + hosted Supabase deployment.
-- ⬜ Accessibility pass and demo video for the capstone.
+- ⬜ Accessibility pass and demo video.
 
 ## Quality gates (run before every commit)
 

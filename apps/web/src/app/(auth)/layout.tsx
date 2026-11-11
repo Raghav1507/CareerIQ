@@ -40,7 +40,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
           </ul>
         </div>
         <p className="relative text-xs text-background/60">
-          CSET400C Capstone Project · Bennett University
+          Open source career intelligence
         </p>
       </div>
 

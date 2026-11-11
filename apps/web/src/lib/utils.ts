@@ -35,9 +35,16 @@ export function formatDate(value: string | Date | null | undefined): string {
   if (!value) return "–";
   const d = typeof value === "string" ? new Date(value) : value;
   if (Number.isNaN(d.getTime())) return "–";
-  return d.toLocaleDateString(undefined, {
+  return d.toLocaleDateString("en-IN", {
     year: "numeric",
     month: "short",
     day: "numeric",
   });
+}
+
+export function formatDateTime(value: string | Date | null | undefined): string {
+  if (!value) return "–";
+  const d = typeof value === "string" ? new Date(value) : value;
+  if (Number.isNaN(d.getTime())) return "–";
+  return d.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" });
 }

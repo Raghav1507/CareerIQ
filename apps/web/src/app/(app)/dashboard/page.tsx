@@ -178,7 +178,7 @@ export default async function DashboardPage() {
               </span>
             </div>
             <p className="text-xs text-muted-foreground">
-              {summary.catalog.aliases.toLocaleString()} skill aliases enable normalisation
+              {summary.catalog.aliases.toLocaleString("en-IN")} skill aliases enable normalisation
               (React.js = React JS = ReactJS).
             </p>
           </CardContent>

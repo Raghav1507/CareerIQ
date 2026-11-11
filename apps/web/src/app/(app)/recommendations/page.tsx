@@ -11,6 +11,7 @@ import { requireUser } from "@/lib/supabase/auth";
 import { queryOne } from "@/lib/db";
 import { getStoredRecommendations } from "@/lib/server/recommendations";
 import type { ScoredSkill } from "@/lib/matching";
+import { formatDateTime } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Recommendations" };
@@ -89,7 +90,7 @@ export default async function RecommendationsPage() {
           <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
             <Badge variant="info">{rows.length} roles ranked</Badge>
             <span>
-              Computed {new Date(rows[0].computed_at).toLocaleString()} ·{" "}
+              Computed {formatDateTime(rows[0].computed_at)} ·{" "}
               {rows[0].model_used ? (
                 <>
                   explanations by <strong className="text-foreground">{rows[0].model_used}</strong>

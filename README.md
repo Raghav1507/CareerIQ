@@ -6,6 +6,31 @@
 
 ---
 
+## Screenshots
+
+Real captures from the running app (demo account):
+
+<p align="center">
+  <img src="docs/images/01-landing.jpg" alt="CareerIQ landing page" width="95%">
+</p>
+
+| | |
+|---|---|
+| **Dashboard — live stats & platform health** | **Resume analysis — review before import** |
+| <img src="docs/images/02-dashboard.jpg" alt="Career intelligence dashboard" width="100%"> | <img src="docs/images/04-resume-review.jpg" alt="Resume skill review with evidence" width="100%"> |
+
+| | |
+|---|---|
+| **Recommendations — explainable M1 scores** | **Skill gap — prioritised advice** |
+| <img src="docs/images/03-recommendations.jpg" alt="Ranked career recommendations" width="100%"> | <img src="docs/images/05-skill-gap.jpg" alt="Skill gap analysis" width="100%"> |
+
+| | |
+|---|---|
+| **Learning roadmap — week-by-week plan** | **Career roles — the ten official tracks** |
+| <img src="docs/images/06-roadmap.jpg" alt="Learning roadmap" width="100%"> | <img src="docs/images/07-roles.jpg" alt="Career roles catalogue" width="100%"> |
+
+---
+
 ## What the project does
 
 CareerIQ answers one question: **"Based on my actual skills, which career role should I
@@ -35,7 +60,7 @@ target next — and exactly what am I missing?"**
 | 6 | **Job analyzer** | Paste a JD → same matcher extracts skills → M1 scoring → closest official role → history |
 | 7 | **Data pipelines** | Official **ESCO v1.2.0** codes imported via the EC API (exact-label rule, nothing fabricated) · **384-d embeddings** for skills & roles (pgvector) |
 
-**The trust story (this is the capstone pitch):**
+**The trust story:**
 
 - **Scores are deterministic.** `score = (weighted matched / weighted required) × 100`
   (required = 2.0, optional = 1.0, weights from `role_skills`). Verified independently
