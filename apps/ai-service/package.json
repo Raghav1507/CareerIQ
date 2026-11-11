@@ -1,0 +1,13 @@
+{
+  "name": "@careeriq/ai-service",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Python FastAPI AI processing service for CareerIQ",
+  "scripts": {
+    "dev": "node scripts/run.mjs -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000",
+    "start": "node scripts/run.mjs -m uvicorn app.main:app --host 0.0.0.0 --port 8000",
+    "test": "node scripts/run.mjs -m pytest -q",
+    "lint": "node scripts/run.mjs -m ruff check app tests",
+    "embed": "node scripts/run.mjs -m app.scripts.embed_catalog"
+  }
+}

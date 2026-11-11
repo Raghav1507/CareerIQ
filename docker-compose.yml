@@ -1,0 +1,42 @@
+name: careeriq
+
+services:
+  # Lightweight PostgreSQL + pgvector for DB-only development.
+  # Full local Supabase (Auth/Storage/PostgREST) is provided by `npx supabase start`.
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: careeriq-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: careeriq
+    ports:
+      - "5432:5432"
+    volumes:
+      - careeriq_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d careeriq"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  # Optional FastAPI container: docker compose --profile full up --build ai
+  ai:
+    profiles: ["full"]
+    build:
+      context: ./apps/ai-service
+    container_name: careeriq-ai
+    restart: unless-stopped
+    env_file:
+      - ./apps/ai-service/.env
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  careeriq_pgdata:

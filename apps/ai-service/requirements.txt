@@ -1,0 +1,16 @@
+# CareerIQ AI service — runtime dependencies (CPU only, no GPU required)
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30,<1.0
+pydantic>=2.9,<3.0
+pydantic-settings>=2.6,<3.0
+python-dotenv>=1.0,<2.0
+httpx>=0.27,<1.0
+PyJWT[crypto]>=2.9,<3.0
+numpy>=1.26,<3.0
+pymupdf>=1.24,<2.0
+spacy>=3.8,<4.0
+psycopg[binary]>=3.2,<4.0
+
+# --- Embeddings (Sentence Transformers, runs on CPU incl. Apple Silicon) ----
+sentence-transformers>=3.0,<4.0
+python-multipart>=0.0.9
