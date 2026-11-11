@@ -19,6 +19,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const APP_URL = process.env.APP_URL ?? "http://localhost:3000";
+const AI_URL = process.env.AI_URL ?? "http://127.0.0.1:8000";
 const RESUME_PATH = process.env.RESUME_PATH ?? "C:\\Users\\LENOVO\\AppData\\Local\\Temp\\opencode\\test-resume.pdf";
 
 let passed = 0;
@@ -364,7 +365,7 @@ You will build dashboards, own features end to end and collaborate with design.`
 
   // ---- 9. explain endpoint (Gemini graceful fallback) --------------------
   console.log("[9] ai explain endpoint");
-  const explainRes = await fetch("http://127.0.0.1:8000/api/v1/explain", {
+  const explainRes = await fetch(`${AI_URL}/api/v1/explain`, {
     method: "POST",
     headers: { "Content-Type": "application/json", "X-Internal-API-Key": env.INTERNAL_API_KEY ?? "" },
     body: JSON.stringify({
