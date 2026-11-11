@@ -1,6 +1,5 @@
 # CareerIQ — AI Career Intelligence Platform
 
-> **CSET400C Capstone · Bennett University**
 > Upload a resume → get **explainable career-role recommendations, skill-gap analysis,
 > a personalized learning roadmap and job-description matching** across ten official
 > technical roles — with every score computed by a transparent formula, never by an LLM.
